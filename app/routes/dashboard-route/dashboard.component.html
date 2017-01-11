@@ -1,0 +1,14 @@
+<h3> Top Heroes </h3>
+<h4> {{title}} </h4>
+<div>
+    <div *ngFor = 'let user of users'  >
+        <img src = "{{user.img}}"/>
+        <div>
+            name:<span> {{user.money}} </span>
+        </div>
+        <input type = "number" [(ngModel)] = 'user.moneyToAdd'/>
+        <button (click) = 'user.addMoney(user.moneyToAdd)'> Add Money </button>
+    </div>
+</div>
+
+<user-detail-modal [title] = 'title'></user-detail-modal>
