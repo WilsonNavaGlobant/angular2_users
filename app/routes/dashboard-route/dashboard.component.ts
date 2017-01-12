@@ -11,10 +11,18 @@ import { User } from '../../classes/user';
 export class DashboardComponent implements OnInit {
     users: User[];
     title = 'THIS IS  A MODAL';
+    showModal: boolean = true;
+    count: number = 0;
     constructor(private userService: UserService) { }
     ngOnInit(): void {
         this.userService.getHeroes((users: User[]) => {
             this.users = users;
         })
+    }
+
+    onShowModal(){
+        console.log("onShowModal")
+        this.showModal = true;
+        this.title = 'WILSON TITLE';
     }
 }

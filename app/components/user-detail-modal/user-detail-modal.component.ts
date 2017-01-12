@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../../classes/user';
 import 'rxjs/add/operator/switchMap';
 
@@ -10,7 +10,18 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class UserDetailModalComponent {
- 
+  @Input() showModal: boolean;
   @Input() title: string;
+  @Input() count: number;
 
+  @Output() countChange = new EventEmitter();
+  @Output() showModalChange = new EventEmitter();
+   
+  
+  onCloseModal(){
+    this.count++;
+    this.showModal = false
+    this.countChange.emit(this.count);
+    this.showModalChange.emit(this.showModal);
+  }
 }

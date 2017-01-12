@@ -1,5 +1,6 @@
 <h3> Top Heroes </h3>
-<h4> {{title}} </h4>
+<h4> {{title}} {{showModal}} {{count}} </h4>
+<button (click) = 'onShowModal()'>open Modal</button>
 <div>
     <div *ngFor = 'let user of users'  >
         <img src = "{{user.img}}"/>
@@ -11,4 +12,5 @@
     </div>
 </div>
 
-<user-detail-modal [title] = 'title'></user-detail-modal>
+
+<user-detail-modal [title] = 'title' [(showModal)] = 'showModal' [(count)] = "count"></user-detail-modal>
