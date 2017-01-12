@@ -25,4 +25,8 @@ export class DashboardComponent implements OnInit {
         this.showModal = true;
         this.title = 'WILSON TITLE';
     }
+    
+  showMessage() {
+    console.log("Message from dashboard")
+  }
 }

@@ -1,7 +1,7 @@
 <div id = 'modalContainer' *ngIf="showModal">
     <div> 
         <h1> {{title}} {{count}} </h1>
-        <input [(ngModel)] = 'title'/>
-        <button (click) = 'onCloseModal()'>colse Modal</button>
+        <input [ngModel] = 'title'  (ngModelChange)="changeTitle($event)"/>
+        <button (click) = 'showMessage()'>colse Modal</button>
     </div>
 </div>

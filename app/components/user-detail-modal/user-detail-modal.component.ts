@@ -13,11 +13,16 @@ export class UserDetailModalComponent {
   @Input() showModal: boolean;
   @Input() title: string;
   @Input() count: number;
+  @Input() showMessage: Function;
 
   @Output() countChange = new EventEmitter();
   @Output() showModalChange = new EventEmitter();
+  @Output() titleChange = new EventEmitter();
    
-  
+  changeTitle(newValue) {
+    this.title = newValue;
+    this.titleChange.emit(this.title);
+  }
   onCloseModal(){
     this.count++;
     this.showModal = false
